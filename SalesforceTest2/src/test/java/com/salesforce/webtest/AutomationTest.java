@@ -17,12 +17,12 @@ public class AutomationTest {
 	
 	
 	@Before
-	public void setUp() throws InterruptedException {
+	public void setUp()  throws InterruptedException {
 		
 		System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://test1dom--sit.my.salesforce.com/secur/frontdoor.jsp?sid=00Dc0000003lOc8!ARsAQCJGjYcOzDX9q7VvU_6Fl7UvpYKNnsU9_BriQXfmQpHD6wVZ1WbiCOGXND4o97fXeeNSztXkVBUtsb.C5Unhlz5LLLN1");
+		driver.get("https://test1dom--sit.my.salesforce.com/secur/frontdoor.jsp?sid=00Dc0000003lOc8!ARsAQOeJIy6coUmKwsv_w0zl955nfyHnn9V_0.5v1wTPuofUE7RqJpxsIBhCGGLkwSi80u2Fz2nh7ExErjvOSkAd.WK7BPHB");
 		
 		Thread.sleep(20000);
 		
@@ -45,15 +45,15 @@ public class AutomationTest {
 		//driver.findElement(By.xpath("//*[@id='RadioUpdateDatosSeibel' AND @value='no']")).click();
 		List<WebElement> opt = driver.findElements(By.id("RadioUpdateDatosSeibel"));
 		opt.get(0).findElement(By.xpath("./..")).click(); //seleccionamos el radio button "NO"
-		
+		//empieza mi codigo
 		driver.findElement(By.xpath("//*[@id=\'SearchClient_nextBtn\']/p")).click(); //linea generada por mi para seleccionar boton siguiente
 		Thread.sleep(10000);
 		
-		/*opt.get(1).findElement(By.xpath("./..")).click();
+		opt.get(0).findElement(By.xpath("./..")).click();
 		Thread.sleep(5000);
 		
-		RoynerClass.editClientInfo(driver);
-		*/  //DESCOMENTAR ESTO SI SE QUIERE VER LA OPCION DE SI EN LA SECIION BUSCAR CIENTE
+		//RoynerClass.editClientInfo(driver);
+
 
 		//------------------------------------PLANES-----------------------
 		/*Aca se puede comentar o descomentar según sea necesario probar*/
@@ -69,18 +69,47 @@ public class AutomationTest {
 		MatiasClass mc = new MatiasClass();
 		//mc.validacionImei(driver);
 		mc.validacionDispositivo(driver);
-		//----------------------Portabilidad------------------------------
-		nc.portabilidadNo(driver);
-		//nc.portabilidadSi(driver);
-		
-		
-		
-		//----------------------Seccion: Resumen de Compra
-		mc.botonEntregaEnDomicilio(driver);
-		//mc.botonEntregaEnSucursal(driver);
 		
 		
 		Thread.sleep(20000);
+		
+		driver.findElement(By.xpath("//*[@id=\'SearchClient_nextBtn\']/p")).click(); //linea generada por mi para seleccionar boton siguiente
+		Thread.sleep(10000);
+		
+		/*opt.get(1).findElement(By.xpath("./..")).click();
+		Thread.sleep(5000);
+		
+		RoynerClass.editClientInfo(driver);
+		*/  //DESCOMENTAR ESTO SI SE QUIERE VER LA OPCION DE SI EN LA SECIION BUSCAR CIENTE
+
+		//------------------------------------PLANES-----------------------
+		/*Aca se puede comentar o descomentar según sea necesario probar*/
+		NelsonClass nc2 = new NelsonClass();
+		nc2.planesPrimero(driver); // Seleccion del plan izzi movil
+		// nc.planesSegundo(driver);  // Seleccion del plan izzi movil adicional
+		
+		
+		//-----------------------Seccion: Validacion de Dispositivos
+		
+		/* Para esta seccion es necesario comentar uno de los 2 codigos (IMEI o Dispositivos)*/
+		
+		MatiasClass mc2 = new MatiasClass();
+		//mc.validacionImei(driver);
+		mc2.validacionDispositivo(driver);
+		
+		
+		//---------------------Clase Cisco -------------------
+		
+		login cisque = new login();
+		
+		cisque.iniciar(driver);
+		
+		
+		Thread.sleep(20000);
+		
+		
+		//----------------------Portabilidad------------------------------
+				nc.portabilidadNo(driver);
 
 	}
 	
