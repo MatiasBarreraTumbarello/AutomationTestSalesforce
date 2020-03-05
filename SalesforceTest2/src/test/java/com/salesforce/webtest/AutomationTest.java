@@ -22,7 +22,7 @@ public class AutomationTest {
 		System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://test1dom--sit.my.salesforce.com/secur/frontdoor.jsp?sid=00Dc0000003lOc8!ARsAQCJGjYcOzDX9q7VvU_6Fl7UvpYKNnsU9_BriQXfmQpHD6wVZ1WbiCOGXND4o97fXeeNSztXkVBUtsb.C5Unhlz5LLLN1");
+		driver.get("https://test1dom--sit.my.salesforce.com/secur/frontdoor.jsp?sid=00Dc0000003lOc8!ARsAQNF.eX3KNE6enL_2rqN.iotzGIj89VclEZFe8CT8W0tc.._bg_J2SjDrJzAnT16D2mKj9xjwxYaoj22k1KipSy1lA8Rj");
 		
 		Thread.sleep(20000);
 		
@@ -42,18 +42,9 @@ public class AutomationTest {
 
 		driver.findElement(By.xpath("//div[@id='IP_validClient']")).click();
 		Thread.sleep(20000);
-		//driver.findElement(By.xpath("//*[@id='RadioUpdateDatosSeibel' AND @value='no']")).click();
-		List<WebElement> opt = driver.findElements(By.id("RadioUpdateDatosSeibel"));
-		opt.get(0).findElement(By.xpath("./..")).click(); //seleccionamos el radio button "NO"
-		
-		driver.findElement(By.xpath("//*[@id=\'SearchClient_nextBtn\']/p")).click(); //linea generada por mi para seleccionar boton siguiente
-		Thread.sleep(10000);
-		
-		/*opt.get(1).findElement(By.xpath("./..")).click();
-		Thread.sleep(5000);
-		
-		RoynerClass.editClientInfo(driver);
-		*/  //DESCOMENTAR ESTO SI SE QUIERE VER LA OPCION DE SI EN LA SECIION BUSCAR CIENTE
+
+		// Cambiar indice a 1 para seleccionar opcion "si"
+		RoynerClass.actualizarCliente(driver, 0);
 
 		//------------------------------------PLANES-----------------------
 		/*Aca se puede comentar o descomentar según sea necesario probar*/
@@ -72,6 +63,9 @@ public class AutomationTest {
 		//----------------------Portabilidad------------------------------
 		nc.portabilidadNo(driver);
 		//nc.portabilidadSi(driver);
+		
+		// Cambiar indice a 1 para seleccionar opcion "sucursal"
+		RoynerClass.tipoDeEntrega(driver, 0);
 		
 		
 		
