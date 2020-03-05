@@ -73,6 +73,13 @@ public class AutomationTest {
 		nc.portabilidadNo(driver);
 		//nc.portabilidadSi(driver);
 		
+		
+		
+		//----------------------Seccion: Resumen de Compra
+		mc.botonEntregaEnDomicilio(driver);
+		//mc.botonEntregaEnSucursal(driver);
+		
+		
 		Thread.sleep(20000);
 
 	}
