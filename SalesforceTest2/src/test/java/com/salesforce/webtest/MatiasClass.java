@@ -33,6 +33,7 @@ public class MatiasClass {
 		
 	}
 	
+	
 	public void validacionDispositivo(WebDriver driver) {
 		try {
 			
@@ -71,6 +72,7 @@ public class MatiasClass {
 	}
 	
 	
+	
 	public void botonEntregaEnDomicilio(WebDriver driver) {
 		try {
 			driver.findElement(By.xpath("//div[@id=\'DeliveryHomeSummary_nextBtn\']/p")).click();
@@ -79,5 +81,4 @@ public class MatiasClass {
 			e.printStackTrace();
 		}
 	}
-
 }
