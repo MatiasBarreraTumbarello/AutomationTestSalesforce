@@ -71,6 +71,7 @@ public class MatiasClass {
 	}
 	
 	
+	
 	public void botonEntregaEnDomicilio(WebDriver driver) {
 		try {
 			driver.findElement(By.xpath("//div[@id=\'DeliveryHomeSummary_nextBtn\']/p")).click();
@@ -78,5 +79,11 @@ public class MatiasClass {
 		}catch(InterruptedException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public int sumaTesteoGit(int a, int b) {
+		int c = a - b;
+		
+		return c;
 	}
 }
