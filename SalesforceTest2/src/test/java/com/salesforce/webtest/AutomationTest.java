@@ -71,7 +71,7 @@ public class AutomationTest {
 		mc.validacionDispositivo(driver);
 		//----------------------Portabilidad------------------------------
 		nc.portabilidadNo(driver);
-
+		//nc.portabilidadSi(driver);
 		
 		Thread.sleep(20000);
 
