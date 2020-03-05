@@ -69,7 +69,9 @@ public class AutomationTest {
 		MatiasClass mc = new MatiasClass();
 		//mc.validacionImei(driver);
 		mc.validacionDispositivo(driver);
-		
+		//----------------------Portabilidad------------------------------
+		nc.portabilidadNo(driver);
+
 		
 		Thread.sleep(20000);
 
