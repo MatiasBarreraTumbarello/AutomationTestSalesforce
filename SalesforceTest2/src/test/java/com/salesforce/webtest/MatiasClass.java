@@ -81,9 +81,5 @@ public class MatiasClass {
 		}
 	}
 	
-	public int sumaTesteoGit(int a, int b) {
-		int c = a - b;
-		
-		return c;
-	}
+
 }
