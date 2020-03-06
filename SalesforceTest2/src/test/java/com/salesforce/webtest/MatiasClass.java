@@ -16,6 +16,7 @@ public class MatiasClass {
 		try {
 			
 			List<WebElement> mdv = driver.findElements(By.id("RadioSelectMethod"));
+			Thread.sleep(tiempo);
 			mdv.get(0).findElement(By.xpath("./..")).click();
 			Thread.sleep(tiempo);
 			driver.findElement(By.xpath("//input[@id=\'NumberIMEI\']")).sendKeys("355576090532169");
@@ -38,6 +39,7 @@ public class MatiasClass {
 		try {
 			
 			List<WebElement> mdv = driver.findElements(By.id("RadioSelectMethod"));
+			Thread.sleep(tiempo);
 			mdv.get(1).findElement(By.xpath("./..")).click();
 			Thread.sleep(tiempo);
 			driver.findElement(By.xpath("//select[@id=\'SelectBrand\']")).click();
