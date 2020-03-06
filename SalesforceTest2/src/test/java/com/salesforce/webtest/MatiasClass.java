@@ -17,13 +17,13 @@ public class MatiasClass {
 			
 			List<WebElement> mdv = driver.findElements(By.id("RadioSelectMethod"));
 			mdv.get(0).findElement(By.xpath("./..")).click();
-			Thread.sleep(5000);
+			Thread.sleep(3000);
 			driver.findElement(By.xpath("//input[@id=\'NumberIMEI\']")).sendKeys("355576090532169");
 			//Thread.sleep(5000);
 			driver.findElement(By.xpath("//div[@id=\'IPAValidateIMEI\']/p")).click();
-			Thread.sleep(5000);
+			Thread.sleep(3000);
 			driver.findElement(By.xpath("//div[@id='StepApprovedDevice_nextBtn']")).click();
-			Thread.sleep(10000);
+			Thread.sleep(3000);
 			
 				} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
@@ -39,7 +39,7 @@ public class MatiasClass {
 			
 			List<WebElement> mdv = driver.findElements(By.id("RadioSelectMethod"));
 			mdv.get(1).findElement(By.xpath("./..")).click();
-			Thread.sleep(5000);
+			Thread.sleep(3000);
 			driver.findElement(By.xpath("//select[@id=\'SelectBrand\']")).click();
 			//Thread.sleep(3000);
 			driver.findElement(By.xpath("//option[@label='BITTIUM']")).click();
@@ -49,7 +49,7 @@ public class MatiasClass {
 			driver.findElement(By.xpath("//option[@label='Tough Mobile']")).click();
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//div[@id='StepApprovedDevice_nextBtn']")).click();
-			Thread.sleep(5000);
+			Thread.sleep(3000);
 			
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
@@ -60,11 +60,11 @@ public class MatiasClass {
 	public void botonEntregaEnSucursal(WebDriver driver) {
 		try {	
 			driver.findElement(By.xpath("//div[@id=\'StockBranches_nextBtn\']/p")).click();  //Seccion "Entrega en Sucursal"
-			Thread.sleep(5000); //20 segundos para chequear info
+			Thread.sleep(3000); //20 segundos para chequear info
 			driver.findElement(By.xpath("//div[@id=\'DeliveryHomeSummary_nextBtn\']/p")).click();
-			Thread.sleep(15000);
+			Thread.sleep(3000);
 			driver.findElement(By.xpath("//div[@id=\'FinishMsg_nextBtn\']/p")).click();
-			Thread.sleep(15000);
+			Thread.sleep(3000);
 			//Nos muestra el numero de pedido 
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
@@ -77,9 +77,9 @@ public class MatiasClass {
 	public void resumenDeCompraDomicilio(WebDriver driver) {
 		try {
 			driver.findElement(By.xpath("//div[@id=\'DeliveryHomeSummary_nextBtn\']/p")).click();
-			Thread.sleep(15000);
+			Thread.sleep(3000);
 			driver.findElement(By.xpath("//div[@id=\'FinishMsg_nextBtn\']/p")).click();
-			Thread.sleep(15000);
+			Thread.sleep(3000);
 		}catch(InterruptedException e) {
 			e.printStackTrace();
 		}

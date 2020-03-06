@@ -1,6 +1,7 @@
 package com.salesforce.webtest;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
 import org.junit.Before;
@@ -24,6 +25,7 @@ public class AutomationTest {
 		driver.manage().window().maximize();
 		driver.get("https://test1dom--sit.my.salesforce.com/secur/frontdoor.jsp?sid=00Dc0000003lOc8!ARsAQOIjf63jURW2O3jPPhnS_8n6eQgkyek9yD22A9yK3CzgWGjypSRPWiWVUSavG3MWauwhkjCDhETXfhnY7uE3ayjjZKTl");
 		//driver.manage().deleteAllCookies();
+		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 		
 		Thread.sleep(20000);
 		
@@ -38,11 +40,11 @@ public class AutomationTest {
 		
 		driver.findElement(By.xpath("//input[@id='seibelUser']")).sendKeys("19991993");
 
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		//Botón: Buscar Cliente
 
 		driver.findElement(By.xpath("//div[@id='IP_validClient']")).click();
-		Thread.sleep(15000);
+		Thread.sleep(4000);
 
 		// Cambiar indice a 1 para seleccionar opcion "si"
 		RoynerClass.actualizarCliente(driver, 0);
@@ -77,7 +79,7 @@ public class AutomationTest {
 		
 		
 		
-		Thread.sleep(20000);
+		Thread.sleep(3000);
 
 	}
 	

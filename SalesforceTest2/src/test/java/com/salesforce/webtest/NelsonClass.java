@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 public class NelsonClass {
  public NelsonClass() {}
  //Esta variable se debe cambiar segun el retraso del servidor.
- public int tiempo= 10000;
+ public int tiempo= 3000;
  
  public  void planesPrimero(WebDriver driver) {
 		
@@ -66,4 +66,8 @@ public void portabilidadSi(WebDriver driver) {
 	
 	 
 }
+//driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+//driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+
 }
