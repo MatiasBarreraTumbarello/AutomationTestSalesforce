@@ -13,7 +13,7 @@ public class NelsonClass {
 			driver.findElement(By.xpath("//*[@id=\'block_0\']")).click();
 			Thread.sleep(tiempo);
 			driver.findElement(By.xpath("//*[@id=\'PlanSelection_nextBtn\']/p")).click();
-			Thread.sleep(tiempo);
+			Thread.sleep(10000);
 
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
@@ -29,7 +29,7 @@ public class NelsonClass {
 			driver.findElement(By.xpath("//*[@id=\'block_1\']")).click();
 			Thread.sleep(tiempo);
 			driver.findElement(By.xpath("//*[@id=\'PlanSelection_nextBtn\']/p")).click();
-			Thread.sleep(tiempo);
+			Thread.sleep(10000);
 
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block

@@ -17,9 +17,9 @@ public class MatiasClass {
 			
 			List<WebElement> mdv = driver.findElements(By.id("RadioSelectMethod"));
 			mdv.get(0).findElement(By.xpath("./..")).click();
-			Thread.sleep(10000);
+			Thread.sleep(5000);
 			driver.findElement(By.xpath("//input[@id=\'NumberIMEI\']")).sendKeys("355576090532169");
-			Thread.sleep(10000);
+			Thread.sleep(5000);
 			driver.findElement(By.xpath("//div[@id=\'IPAValidateIMEI\']/p")).click();
 			Thread.sleep(10000);
 			driver.findElement(By.xpath("//div[@id='StepApprovedDevice_nextBtn']")).click();
@@ -60,7 +60,7 @@ public class MatiasClass {
 	public void botonEntregaEnSucursal(WebDriver driver) {
 		try {	
 			driver.findElement(By.xpath("//div[@id=\'StockBranches_nextBtn\']/p")).click();  //Seccion "Entrega en Sucursal"
-			Thread.sleep(10000); //20 segundos para chequear info
+			Thread.sleep(5000); //20 segundos para chequear info
 			driver.findElement(By.xpath("//div[@id=\'DeliveryHomeSummary_nextBtn\']/p")).click();
 			Thread.sleep(15000);
 			driver.findElement(By.xpath("//div[@id=\'FinishMsg_nextBtn\']/p")).click();

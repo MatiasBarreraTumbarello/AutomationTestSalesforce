@@ -23,6 +23,7 @@ public class AutomationTest {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://test1dom--sit.my.salesforce.com/secur/frontdoor.jsp?sid=00Dc0000003lOc8!ARsAQOIjf63jURW2O3jPPhnS_8n6eQgkyek9yD22A9yK3CzgWGjypSRPWiWVUSavG3MWauwhkjCDhETXfhnY7uE3ayjjZKTl");
+		//driver.manage().deleteAllCookies();
 		
 		Thread.sleep(20000);
 		
