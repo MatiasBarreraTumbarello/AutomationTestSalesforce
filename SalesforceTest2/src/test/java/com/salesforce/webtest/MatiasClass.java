@@ -17,7 +17,7 @@ public class MatiasClass {
 			
 			List<WebElement> mdv = driver.findElements(By.id("RadioSelectMethod"));
 			mdv.get(0).findElement(By.xpath("./..")).click();
-			Thread.sleep(3000);
+			Thread.sleep(4000);
 			driver.findElement(By.xpath("//input[@id=\'NumberIMEI\']")).sendKeys("355576090532169");
 			//Thread.sleep(5000);
 			driver.findElement(By.xpath("//div[@id=\'IPAValidateIMEI\']/p")).click();
@@ -39,7 +39,7 @@ public class MatiasClass {
 			
 			List<WebElement> mdv = driver.findElements(By.id("RadioSelectMethod"));
 			mdv.get(1).findElement(By.xpath("./..")).click();
-			Thread.sleep(3000);
+			Thread.sleep(4000);
 			driver.findElement(By.xpath("//select[@id=\'SelectBrand\']")).click();
 			//Thread.sleep(3000);
 			driver.findElement(By.xpath("//option[@label='BITTIUM']")).click();
