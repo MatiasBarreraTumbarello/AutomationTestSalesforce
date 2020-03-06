@@ -25,6 +25,7 @@ public class AutomationTest {
 		driver.manage().window().maximize();
 		driver.get("https://test1dom--sit.my.salesforce.com/secur/frontdoor.jsp?sid=00Dc0000003lOc8!ARsAQOIjf63jURW2O3jPPhnS_8n6eQgkyek9yD22A9yK3CzgWGjypSRPWiWVUSavG3MWauwhkjCDhETXfhnY7uE3ayjjZKTl");
 		//driver.manage().deleteAllCookies();
+		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 		
 		Thread.sleep(20000);

@@ -12,7 +12,7 @@ public class RoynerClass{
 		List<WebElement> opt = driver.findElements(By.id("RadioUpdateDatosSeibel"));
 		Thread.sleep(4000);
 		opt.get(index).findElement(By.xpath("./..")).click();
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		
 		driver.findElement(By.id("SearchClient_nextBtn")).click();
 		Thread.sleep(5000);
@@ -25,12 +25,12 @@ public class RoynerClass{
 		WebElement phone = driver.findElement(By.id("TextNumberPhone"));
 		phone.clear();
 		phone.sendKeys("5518497468");
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		
 		WebElement email = driver.findElement(By.id("TextEmail"));
 		email.clear();
 		email.sendKeys("scardozo@labsxd.co");
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		
 		driver.findElement(By.id("AditionalInfo_nextBtn")).click();
 	}
@@ -38,7 +38,7 @@ public class RoynerClass{
 	public static void tipoDeEntrega(WebDriver driver, Integer index) throws InterruptedException {
 		List<WebElement> opt = driver.findElements(By.id("RadioProfileNoVentas"));
 		opt.get(index).findElement(By.xpath("./..")).click();
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		driver.findElement(By.id("StepSaleProcessDevice_nextBtn")).click();
 		Thread.sleep(5000);
 		if(index == 1)
