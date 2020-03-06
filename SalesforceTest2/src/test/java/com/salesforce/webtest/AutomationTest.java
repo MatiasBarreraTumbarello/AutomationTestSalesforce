@@ -40,7 +40,7 @@ public class AutomationTest {
 		
 		driver.findElement(By.xpath("//input[@id='seibelUser']")).sendKeys("19991993");
 
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		//Botón: Buscar Cliente
 
 		driver.findElement(By.xpath("//div[@id='IP_validClient']")).click();
