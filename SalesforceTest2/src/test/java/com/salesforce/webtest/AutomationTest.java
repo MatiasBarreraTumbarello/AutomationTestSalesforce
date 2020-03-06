@@ -38,11 +38,11 @@ public class AutomationTest {
 		
 		driver.findElement(By.xpath("//input[@id='seibelUser']")).sendKeys("19991993");
 
-		Thread.sleep(10000);
+		Thread.sleep(5000);
 		//Botón: Buscar Cliente
 
 		driver.findElement(By.xpath("//div[@id='IP_validClient']")).click();
-		Thread.sleep(20000);
+		Thread.sleep(15000);
 
 		// Cambiar indice a 1 para seleccionar opcion "si"
 		RoynerClass.actualizarCliente(driver, 0);
