@@ -19,7 +19,7 @@ public class MatiasClass {
 			mdv.get(0).findElement(By.xpath("./..")).click();
 			Thread.sleep(10000);
 			driver.findElement(By.xpath("//input[@id=\'NumberIMEI\']")).sendKeys("355576090532169");
-			Thread.sleep(15000);
+			Thread.sleep(10000);
 			driver.findElement(By.xpath("//div[@id=\'IPAValidateIMEI\']/p")).click();
 			Thread.sleep(10000);
 			driver.findElement(By.xpath("//div[@id='StepApprovedDevice_nextBtn']")).click();
@@ -41,15 +41,15 @@ public class MatiasClass {
 			mdv.get(1).findElement(By.xpath("./..")).click();
 			Thread.sleep(10000);
 			driver.findElement(By.xpath("//select[@id=\'SelectBrand\']")).click();
-			Thread.sleep(10000);
+			Thread.sleep(5000);
 			driver.findElement(By.xpath("//option[@label='BITTIUM']")).click();
-			Thread.sleep(10000);
+			Thread.sleep(5000);
 			driver.findElement(By.xpath("//select[@id=\'SelectModel\']")).click();
-			Thread.sleep(10000);
+			Thread.sleep(5000);
 			driver.findElement(By.xpath("//option[@label='Tough Mobile']")).click();
-			Thread.sleep(10000);
+			Thread.sleep(5000);
 			driver.findElement(By.xpath("//div[@id='StepApprovedDevice_nextBtn']")).click();
-			Thread.sleep(10000);
+			Thread.sleep(5000);
 			
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
