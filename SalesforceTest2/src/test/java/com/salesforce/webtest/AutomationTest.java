@@ -37,7 +37,7 @@ public class AutomationTest {
 		
 		driver.findElement(By.xpath("//input[@id='seibelUser']")).sendKeys("19991993");
 
-		Thread.sleep(20000);
+		Thread.sleep(10000);
 		//Botón: Buscar Cliente
 
 		driver.findElement(By.xpath("//div[@id='IP_validClient']")).click();
@@ -65,13 +65,15 @@ public class AutomationTest {
 		//nc.portabilidadSi(driver);
 		
 		// Cambiar indice a 1 para seleccionar opcion "sucursal"
-		RoynerClass.tipoDeEntrega(driver, 0);
+		RoynerClass.tipoDeEntrega(driver, 1);
 		
 		
 		
 		//----------------------Seccion: Resumen de Compra
-		mc.botonEntregaEnDomicilio(driver);
-		//mc.botonEntregaEnSucursal(driver);
+		//mc.resumenDeCompraDomicilio(driver);
+		mc.botonEntregaEnSucursal(driver);
+		
+		
 		
 		
 		Thread.sleep(20000);
