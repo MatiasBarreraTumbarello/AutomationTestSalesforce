@@ -5,7 +5,8 @@ import org.openqa.selenium.WebDriver;
 
 public class NelsonClass {
  public NelsonClass() {}
- public int tiempo= 5000;
+ //Esta variable se debe cambiar segun el retraso del servidor.
+ public int tiempo= 10000;
  
  public  void planesPrimero(WebDriver driver) {
 		
@@ -13,7 +14,7 @@ public class NelsonClass {
 			driver.findElement(By.xpath("//*[@id=\'block_0\']")).click();
 			Thread.sleep(tiempo);
 			driver.findElement(By.xpath("//*[@id=\'PlanSelection_nextBtn\']/p")).click();
-			Thread.sleep(10000);
+			Thread.sleep(tiempo);
 
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
@@ -29,7 +30,7 @@ public class NelsonClass {
 			driver.findElement(By.xpath("//*[@id=\'block_1\']")).click();
 			Thread.sleep(tiempo);
 			driver.findElement(By.xpath("//*[@id=\'PlanSelection_nextBtn\']/p")).click();
-			Thread.sleep(10000);
+			Thread.sleep(tiempo);
 
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
