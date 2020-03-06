@@ -62,9 +62,9 @@ public class MatiasClass {
 			driver.findElement(By.xpath("//div[@id=\'StockBranches_nextBtn\']/p")).click();  //Seccion "Entrega en Sucursal"
 			Thread.sleep(10000); //20 segundos para chequear info
 			driver.findElement(By.xpath("//div[@id=\'DeliveryHomeSummary_nextBtn\']/p")).click();
-			Thread.sleep(10000);
+			Thread.sleep(15000);
 			driver.findElement(By.xpath("//div[@id=\'FinishMsg_nextBtn\']/p")).click();
-			Thread.sleep(10000);
+			Thread.sleep(15000);
 			//Nos muestra el numero de pedido 
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
