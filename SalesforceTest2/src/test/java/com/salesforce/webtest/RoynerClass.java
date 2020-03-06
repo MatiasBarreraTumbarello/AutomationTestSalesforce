@@ -10,6 +10,7 @@ public class RoynerClass{
 	
 	public static void actualizarCliente(WebDriver driver, Integer index) throws InterruptedException {
 		List<WebElement> opt = driver.findElements(By.id("RadioUpdateDatosSeibel"));
+		Thread.sleep(4000);
 		opt.get(index).findElement(By.xpath("./..")).click();
 		Thread.sleep(2000);
 		
