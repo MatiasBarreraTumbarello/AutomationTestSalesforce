@@ -66,10 +66,9 @@ public class AutomationTest {
 		//------------------------------------PLANES-----------------------
 		/*Aca se puede comentar o descomentar según sea necesario probar*/
 		NelsonClass nc = new NelsonClass();
-		WebDriverWait wait = new WebDriverWait (driver, 30);
-		WebElement plan =driver.findElement(By.xpath("//*[@id=\'block_0\']"));
-		WebElement siguientePlan = driver.findElement(By.xpath("//div[@id=\'PlanSelection_nextBtn\']/p"));
-		nc.planesPrimero(driver, plan, 20, siguientePlan);
+		
+		nc.planesPrimero(driver);
+		//nc.planesSegundo(driver, plan2, 20, siguientePlan);
 		Thread.sleep(4000);
 		
 		
@@ -87,8 +86,14 @@ public class AutomationTest {
 		
 		
 		//----------------------Portabilidad------------------------------
-		//nc.portabilidadNo(driver);
-		//nc.portabilidadSi(driver);
+		
+		
+		
+		
+		//WebElement portabilidadNo =driver.findElement(By.xpath("//*[@id=\'block_0\']"));
+		nc.portabilidadNo(driver);
+		
+		
 		
 		// Cambiar indice a 1 para seleccionar opcion "sucursal"
 		RoynerClass.tipoDeEntrega(driver, 1);
