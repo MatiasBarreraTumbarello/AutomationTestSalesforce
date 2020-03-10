@@ -69,8 +69,11 @@ public class AutomationTest {
 		/* Para esta seccion es necesario comentar uno de los 2 codigos (IMEI o Dispositivos)*/
 		
 		MatiasClass mc = new MatiasClass();
-		//mc.validacionImei(driver);
-		mc.validacionDispositivo(driver);
+		//mc.validacionImei(driver, 20);
+		mc.validacionDispositivo(driver, 20);
+		
+		
+		
 		//----------------------Portabilidad------------------------------
 		//nc.portabilidadNo(driver);
 		//nc.portabilidadSi(driver);
