@@ -54,8 +54,6 @@ public class AutomationTest {
 		//------------------------------------PLANES-----------------------
 		/*Aca se puede comentar o descomentar según sea necesario probar*/
 		NelsonClass nc = new NelsonClass();
-		
-		
 		WebDriverWait wait = new WebDriverWait (driver, 30);
 		WebElement plan =driver.findElement(By.xpath("//*[@id=\'block_0\']"));
 		WebElement siguientePlan = driver.findElement(By.xpath("//div[@id=\'PlanSelection_nextBtn\']/p"));
