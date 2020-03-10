@@ -27,9 +27,8 @@ public class NelsonClass {
 			new WebDriverWait(driver, 40).until(ExpectedConditions.elementToBeClickable(plan));
 			plan.click();
 			Thread.sleep(tiempo);
-			WebElement siguientePlan = driver.findElement(By.xpath("//div[@id=\'PlanSelection_nextBtn\']/p"));
-			new WebDriverWait(driver, 40).until(ExpectedConditions.elementToBeClickable(siguientePlan));
-			siguientePlan.click();
+			driver.findElement(By.xpath("//*[@id=\'PlanSelection_nextBtn\']/p")).click();
+			Thread.sleep(tiempo);
 			
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
@@ -64,9 +63,8 @@ public class NelsonClass {
 			web.get(1).findElement(By.xpath("./..")).click();
 			Thread.sleep(tiempo);
 			
-			WebElement siguientePorta = driver.findElement(By.id("StepDeviceValidation_nextBtn"));
-			new WebDriverWait(driver, 40).until(ExpectedConditions.elementToBeClickable(siguientePorta));
-			siguientePorta.click();
+			driver.findElement(By.xpath("//*[@id=\'StepDeviceValidation_nextBtn\']/p")).click();
+			Thread.sleep(tiempo);
 			
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
