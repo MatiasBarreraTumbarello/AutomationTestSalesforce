@@ -11,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AutomationTest {
 	
@@ -53,8 +54,16 @@ public class AutomationTest {
 		//------------------------------------PLANES-----------------------
 		/*Aca se puede comentar o descomentar según sea necesario probar*/
 		NelsonClass nc = new NelsonClass();
-		nc.planesPrimero(driver); // Seleccion del plan izzi movil
-		// nc.planesSegundo(driver);  // Seleccion del plan izzi movil adicional
+		
+		
+		WebDriverWait wait = new WebDriverWait (driver, 30);
+		WebElement plan =driver.findElement(By.xpath("//*[@id=\'block_0\']"));
+		WebElement siguientePlan = driver.findElement(By.xpath("//div[@id=\'PlanSelection_nextBtn\']/p"));
+		nc.planesPrimero(driver, plan, 20, siguientePlan);
+		Thread.sleep(4000);
+		
+		
+		
 		
 		
 		//-----------------------Seccion: Validacion de Dispositivos
@@ -65,7 +74,7 @@ public class AutomationTest {
 		//mc.validacionImei(driver);
 		mc.validacionDispositivo(driver);
 		//----------------------Portabilidad------------------------------
-		nc.portabilidadNo(driver);
+		//nc.portabilidadNo(driver);
 		//nc.portabilidadSi(driver);
 		
 		// Cambiar indice a 1 para seleccionar opcion "sucursal"
