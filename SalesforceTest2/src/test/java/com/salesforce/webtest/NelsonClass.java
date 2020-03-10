@@ -1,5 +1,9 @@
 package com.salesforce.webtest;
 
+
+
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,14 +16,19 @@ public class NelsonClass {
  public int tiempo= 4000;
  
  
- public  void planesPrimero(WebDriver driver, WebElement plan, int timeout, WebElement siguientePlan) {
+ public  void planesPrimero(WebDriver driver) {
 		
 		try {
+			WebDriverWait wait = new WebDriverWait (driver, 40);
+			WebElement plan =driver.findElement(By.xpath("//*[@id=\'block_0\']"));
+			//WebElement plan2 =driver.findElement(By.xpath("//*[@id=\'block_1\']"));
 			
-			new WebDriverWait(driver, timeout).until(ExpectedConditions.elementToBeClickable(plan));
+			
+			new WebDriverWait(driver, 40).until(ExpectedConditions.elementToBeClickable(plan));
 			plan.click();
 			Thread.sleep(tiempo);
-			new WebDriverWait(driver, timeout).until(ExpectedConditions.elementToBeClickable(siguientePlan));
+			WebElement siguientePlan = driver.findElement(By.xpath("//div[@id=\'PlanSelection_nextBtn\']/p"));
+			new WebDriverWait(driver, 40).until(ExpectedConditions.elementToBeClickable(siguientePlan));
 			siguientePlan.click();
 			
 		} catch (InterruptedException e) {
@@ -46,15 +55,18 @@ public class NelsonClass {
 		}
 	}
  
- public  void portabilidadNo(WebDriver driver, WebElement plan2, int timeout, WebElement siguientePlan) {
+ public  void portabilidadNo(WebDriver driver) {
 		
 		try {
 			
-			new WebDriverWait(driver, timeout).until(ExpectedConditions.elementToBeClickable(plan2));
-			plan2.click();
+			List<WebElement> web = driver.findElements(By.id("OptionPortability"));
+			new WebDriverWait(driver, 40).until(ExpectedConditions.elementToBeClickable(By.id("OptionPortability")));
+			web.get(1).findElement(By.xpath("./..")).click();
 			Thread.sleep(tiempo);
-			new WebDriverWait(driver, timeout).until(ExpectedConditions.elementToBeClickable(siguientePlan));
-			siguientePlan.click();
+			
+			WebElement siguientePorta = driver.findElement(By.id("StepDeviceValidation_nextBtn"));
+			new WebDriverWait(driver, 40).until(ExpectedConditions.elementToBeClickable(siguientePorta));
+			siguientePorta.click();
 			
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
