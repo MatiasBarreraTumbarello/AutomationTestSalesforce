@@ -64,9 +64,9 @@ public class NelsonClass {
 			web.get(1).findElement(By.xpath("./..")).click();
 			Thread.sleep(tiempo);
 			
-			WebElement siguientePorta = driver.findElement(By.id("StepDeviceValidation_nextBtn"));
-			new WebDriverWait(driver, 40).until(ExpectedConditions.elementToBeClickable(siguientePorta));
-			siguientePorta.click();
+			driver.findElement(By.xpath("//*[@id=\'StepDeviceValidation_nextBtn\']/p")).click();
+			Thread.sleep(tiempo);
+		
 			
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
