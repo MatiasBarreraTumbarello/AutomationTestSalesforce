@@ -11,30 +11,24 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class MatiasClass {
 	public int tiempo= 5000;
 	public MatiasClass() {}
-	public List<WebElement> mdv;
-	public WebElement boton;
 	
-	public void validacionImei(WebDriver driver, int timeout) {
+	
+	public void validacionImei(WebDriver driver) {
 	{
 		try {
 			
-			mdv = driver.findElements(By.id("RadioSelectMethod"));
-			mdv.get(0).findElement(By.xpath("./.."));
-			new WebDriverWait(driver, timeout).until(ExpectedConditions.elementToBeClickable(mdv.get(0)));
-			mdv.get(0).click();
+			List<WebElement> mdv = driver.findElements(By.id("RadioSelectMethod"));
+			WebElement opcion1 = new WebDriverWait(driver, 40)
+			        .until(ExpectedConditions.elementToBeClickable(By.id("RadioSelectMethod")));
+			Thread.sleep(tiempo);
+			mdv.get(0).findElement(By.xpath("./..")).click();
 			Thread.sleep(tiempo);
 			driver.findElement(By.xpath("//input[@id=\'NumberIMEI\']")).sendKeys("355576090532169");
 			//Thread.sleep(5000);
-			
-			boton = driver.findElement(By.xpath("//div[@id=\'IPAValidateIMEI\']/p"));
-			new WebDriverWait(driver, timeout).until(ExpectedConditions.elementToBeClickable(boton));
-			boton.click();
+			driver.findElement(By.xpath("//div[@id=\'IPAValidateIMEI\']/p")).click();
 			Thread.sleep(tiempo);
-			boton = driver.findElement(By.xpath("//div[@id='StepApprovedDevice_nextBtn']"));
-			new WebDriverWait(driver, timeout).until(ExpectedConditions.elementToBeClickable(boton));
-			boton.click();
+			driver.findElement(By.xpath("//div[@id='StepApprovedDevice_nextBtn']")).click();
 			Thread.sleep(tiempo);
-			
 				} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -44,13 +38,14 @@ public class MatiasClass {
 	}
 	
 	
-	public void validacionDispositivo(WebDriver driver, int timeout) {
+	public void validacionDispositivo(WebDriver driver) {
 		try {
 			
-			mdv = driver.findElements(By.id("RadioSelectMethod"));
-			mdv.get(1).findElement(By.xpath("./.."));
-			new WebDriverWait(driver, timeout).until(ExpectedConditions.elementToBeClickable(mdv.get(1)));
-			mdv.get(1).click();
+			List<WebElement> mdv = driver.findElements(By.id("RadioSelectMethod"));
+			WebElement opcion2 = new WebDriverWait(driver, 40)
+			        .until(ExpectedConditions.elementToBeClickable(By.id("RadioSelectMethod")));
+			Thread.sleep(tiempo);
+			mdv.get(1).findElement(By.xpath("./..")).click();
 
 			Thread.sleep(tiempo);
 			driver.findElement(By.xpath("//select[@id=\'SelectBrand\']")).click();
@@ -60,9 +55,8 @@ public class MatiasClass {
 			driver.findElement(By.xpath("//select[@id=\'SelectModel\']")).click();
 			//Thread.sleep(3000);
 			driver.findElement(By.xpath("//option[@label='Tough Mobile']")).click();
-			boton = driver.findElement(By.xpath("//div[@id='StepApprovedDevice_nextBtn']"));
-			new WebDriverWait(driver, timeout).until(ExpectedConditions.elementToBeClickable(boton));
-			boton.click();
+			Thread.sleep(tiempo);
+			driver.findElement(By.xpath("//div[@id='StepApprovedDevice_nextBtn']")).click();
 			Thread.sleep(tiempo);
 			
 		} catch (InterruptedException e) {

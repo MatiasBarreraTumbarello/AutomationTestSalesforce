@@ -82,7 +82,7 @@ public class AutomationTest {
 		
 		MatiasClass mc = new MatiasClass();
 		//mc.validacionImei(driver, 20);
-		mc.validacionDispositivo(driver, 20);
+		mc.validacionDispositivo(driver);
 		
 		
 		
