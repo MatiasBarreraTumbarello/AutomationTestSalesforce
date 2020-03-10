@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class MatiasClass {
-	public int tiempo= 4000;
+	public int tiempo= 5000;
 	public MatiasClass() {}
 	
 	
