@@ -30,34 +30,38 @@ public class NelsonClass {
  
  
  
- public void planesSegundo(WebDriver driver) {
+ public  void planesSegundo(WebDriver driver, WebElement plan2, int timeout, WebElement siguientePlan) {
 		
 		try {
-			driver.findElement(By.xpath("//*[@id=\'block_1\']")).click();
+			
+			new WebDriverWait(driver, timeout).until(ExpectedConditions.elementToBeClickable(plan2));
+			plan2.click();
 			Thread.sleep(tiempo);
-			driver.findElement(By.xpath("//*[@id=\'PlanSelection_nextBtn\']/p")).click();
-			Thread.sleep(tiempo);
-
+			new WebDriverWait(driver, timeout).until(ExpectedConditions.elementToBeClickable(siguientePlan));
+			siguientePlan.click();
+			
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
  
-public void portabilidadNo(WebDriver driver) {
-	 
-	 try {
-		 driver.findElement(By.xpath("//*[@id=\'OptionPortability|0\']/div/div[1]/label[2]/span[1]")).click();
-		 Thread.sleep(tiempo);
-		 driver.findElement(By.xpath("//*[@id='StepDeviceValidation_nextBtn']/p")).click();
-		Thread.sleep(tiempo);
-	} catch (InterruptedException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
+ public  void portabilidadNo(WebDriver driver, WebElement plan2, int timeout, WebElement siguientePlan) {
+		
+		try {
+			
+			new WebDriverWait(driver, timeout).until(ExpectedConditions.elementToBeClickable(plan2));
+			plan2.click();
+			Thread.sleep(tiempo);
+			new WebDriverWait(driver, timeout).until(ExpectedConditions.elementToBeClickable(siguientePlan));
+			siguientePlan.click();
+			
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
-	
-	 
- }
+ 
 public void portabilidadSi(WebDriver driver) {
 	 
 	 try {
