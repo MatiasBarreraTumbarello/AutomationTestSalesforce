@@ -2,25 +2,31 @@ package com.salesforce.webtest;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class NelsonClass {
  public NelsonClass() {}
  //Esta variable se debe cambiar segun el retraso del servidor.
  public int tiempo= 4000;
  
- public  void planesPrimero(WebDriver driver) {
+ 
+ public  void planesPrimero(WebDriver driver, WebElement plan, int timeout, WebElement siguientePlan) {
 		
 		try {
-			driver.findElement(By.xpath("//*[@id=\'block_0\']")).click();
+			
+			new WebDriverWait(driver, timeout).until(ExpectedConditions.elementToBeClickable(plan));
+			plan.click();
 			Thread.sleep(tiempo);
-			driver.findElement(By.xpath("//*[@id=\'PlanSelection_nextBtn\']/p")).click();
-			Thread.sleep(tiempo);
-
+			new WebDriverWait(driver, timeout).until(ExpectedConditions.elementToBeClickable(siguientePlan));
+			siguientePlan.click();
+			
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-}
+	}
  
  
  
