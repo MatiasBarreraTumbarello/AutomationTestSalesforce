@@ -55,7 +55,7 @@ public class MatiasClass {
 			driver.findElement(By.xpath("//select[@id=\'SelectModel\']")).click();
 			//Thread.sleep(3000);
 			driver.findElement(By.xpath("//option[@label='Tough Mobile']")).click();
-			Thread.sleep(tiempo);
+			//Thread.sleep(tiempo);
 			driver.findElement(By.xpath("//div[@id='StepApprovedDevice_nextBtn']")).click();
 			Thread.sleep(tiempo);
 			
@@ -68,14 +68,17 @@ public class MatiasClass {
 	public void botonEntregaEnSucursal(WebDriver driver) {
 		try {	
 			driver.findElement(By.xpath("//div[@id=\'StockBranches_nextBtn\']/p")).click();  //Seccion "Entrega en Sucursal"
-			Thread.sleep(tiempo); //20 segundos para chequear info
-			driver.findElement(By.xpath("//div[@id=\'DeliveryHomeSummary_nextBtn\']/p")).click();
 			Thread.sleep(tiempo);
-			driver.findElement(By.xpath("//div[@id=\'FinishMsg_nextBtn\']/p")).click();
+			WebElement siguiente = driver.findElement(By.xpath("//div[@id=\'DeliveryHomeSummary_nextBtn\']/p"));
+			new WebDriverWait (driver, 40).until(ExpectedConditions.elementToBeClickable(siguiente));
+			siguiente.click();
+			Thread.sleep(tiempo);
+			WebElement finalizar = driver.findElement(By.xpath("//div[@id=\'FinishMsg_nextBtn\']/p"));
+			new WebDriverWait (driver, 40).until(ExpectedConditions.elementToBeClickable(finalizar));
+			finalizar.click();
 			Thread.sleep(tiempo);
 			//Nos muestra el numero de pedido 
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -86,7 +89,10 @@ public class MatiasClass {
 		try {
 			driver.findElement(By.xpath("//div[@id=\'DeliveryHomeSummary_nextBtn\']/p")).click();
 			Thread.sleep(tiempo);
-			driver.findElement(By.xpath("//div[@id=\'FinishMsg_nextBtn\']/p")).click();
+			WebElement siguiente = driver.findElement(By.id("FinishMsg_nextBtn"));
+			new WebDriverWait (driver, 40).until(ExpectedConditions.elementToBeClickable(siguiente));
+			siguiente.click();
+		//	driver.findElement(By.xpath("//div[@id=\'FinishMsg_nextBtn\']/p")).click();
 			Thread.sleep(tiempo);
 		}catch(InterruptedException e) {
 			e.printStackTrace();

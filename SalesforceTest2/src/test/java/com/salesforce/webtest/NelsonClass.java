@@ -27,7 +27,11 @@ public class NelsonClass {
 			new WebDriverWait(driver, 40).until(ExpectedConditions.elementToBeClickable(plan));
 			plan.click();
 			Thread.sleep(tiempo);
-			driver.findElement(By.xpath("//*[@id=\'PlanSelection_nextBtn\']/p")).click();
+			//---codigo agregado por matias
+			WebElement siguiente = driver.findElement(By.xpath("//*[@id=\'PlanSelection_nextBtn\']/p"));
+			new WebDriverWait (driver, 40).until(ExpectedConditions.elementToBeClickable(siguiente));
+			siguiente.click();
+			//---
 			Thread.sleep(tiempo);
 			
 		} catch (InterruptedException e) {

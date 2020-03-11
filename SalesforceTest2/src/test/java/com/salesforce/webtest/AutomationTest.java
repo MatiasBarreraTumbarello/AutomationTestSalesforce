@@ -25,9 +25,9 @@ public class AutomationTest {
 		System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://test1dom--sit.my.salesforce.com/secur/frontdoor.jsp?sid=00Dc0000003lOc8!ARsAQKMaCa1WmbO7z7tm2pJj64Uzf.kuDoXPogLaqzE.aGYT0_JokvR4QOEEHyMb_Nt7kR67sxuUMvz0CUPDm5ORrg7jp8jy");
+		driver.get("https://test1dom--sit.my.salesforce.com/secur/frontdoor.jsp?sid=00Dc0000003lOc8!ARsAQBQKlDHzHktgfnWVLyDDg_mw_dnp2VyuXSzNRVc50qVYHRTdscj7lMiUcNkA2yuxrNIYBqOH04jHsRzNc2Plm17reF6L");
 		//driver.manage().deleteAllCookies();
-		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+		//driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 		//driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 		
 		Thread.sleep(20000);
@@ -86,8 +86,6 @@ public class AutomationTest {
 		
 		
 		//----------------------Portabilidad------------------------------
-		
-		
 		
 		
 		//WebElement portabilidadNo =driver.findElement(By.xpath("//*[@id=\'block_0\']"));
