@@ -26,6 +26,7 @@ public class NelsonClass {
 			Thread.sleep(tiempo);
 			
 			plan.findElement(By.xpath("./..")).click();
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("slds-spinner_container")));
 			Thread.sleep(tiempo);
 			WebElement siguientePlan = new WebDriverWait(driver, 40).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id=\'PlanSelection_nextBtn\']/p")));
 			siguientePlan.click();
