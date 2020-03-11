@@ -30,6 +30,7 @@ public class AutomationTest {
 		//driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 		//new WebDriverWait(driver, 40).until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.tagName("iframe")));
+
 		//driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 		
 		Thread.sleep(20000);
@@ -83,14 +84,12 @@ public class AutomationTest {
 		/* Para esta seccion es necesario comentar uno de los 2 codigos (IMEI o Dispositivos)*/
 		
 		MatiasClass mc = new MatiasClass();
-		//mc.validacionImei(driver, 20);
+		//mc.validacionImei(driver);
 		mc.validacionDispositivo(driver);
 		
 		
 		
 		//----------------------Portabilidad------------------------------
-		
-		
 		
 		
 		//WebElement portabilidadNo =driver.findElement(By.xpath("//*[@id=\'block_0\']"));

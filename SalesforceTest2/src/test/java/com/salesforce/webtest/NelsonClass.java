@@ -38,14 +38,17 @@ public class NelsonClass {
  
  
  
- public  void planesSegundo(WebDriver driver, WebElement plan2, int timeout, WebElement siguientePlan) {
+ public  void planesSegundo(WebDriver driver) {
 		
 		try {
 			
-			new WebDriverWait(driver, timeout).until(ExpectedConditions.elementToBeClickable(plan2));
-			plan2.click();
+			WebDriverWait wait = new WebDriverWait(driver, 40);
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("slds-spinner_container")));
+			WebElement plan = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\'block_1\']")));
+
+			plan.findElement(By.xpath("./..")).click();
 			Thread.sleep(tiempo);
-			new WebDriverWait(driver, timeout).until(ExpectedConditions.elementToBeClickable(siguientePlan));
+			WebElement siguientePlan = new WebDriverWait(driver, 40).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id=\'PlanSelection_nextBtn\']/p")));
 			siguientePlan.click();
 			
 		} catch (InterruptedException e) {
@@ -65,7 +68,6 @@ public class NelsonClass {
 			
 			driver.findElement(By.xpath("//*[@id=\'StepDeviceValidation_nextBtn\']/p")).click();
 			Thread.sleep(tiempo);
-		
 			
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block

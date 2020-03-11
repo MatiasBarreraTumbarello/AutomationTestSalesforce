@@ -55,7 +55,7 @@ public class MatiasClass {
 			driver.findElement(By.xpath("//select[@id=\'SelectModel\']")).click();
 			//Thread.sleep(3000);
 			driver.findElement(By.xpath("//option[@label='Tough Mobile']")).click();
-			Thread.sleep(tiempo);
+			//Thread.sleep(tiempo);
 			driver.findElement(By.xpath("//div[@id='StepApprovedDevice_nextBtn']")).click();
 			Thread.sleep(tiempo);
 			
@@ -75,14 +75,12 @@ public class MatiasClass {
 			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("slds-spinner_container")));
 			WebElement btn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id=\'DeliveryHomeSummary_nextBtn\']/p")));
 			btn.click();
-			System.out.print("--- To finish ---");
 			Thread.sleep(tiempo);
 			WebElement btnFinish = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id=\'FinishMsg_nextBtn\']/p")));
 			btnFinish.click();
 			Thread.sleep(tiempo);
 			//Nos muestra el numero de pedido 
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
