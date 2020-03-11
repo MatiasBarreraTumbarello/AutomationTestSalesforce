@@ -39,6 +39,8 @@ public class RoynerClass{
 	}
 	
 	public static void tipoDeEntrega(WebDriver driver, Integer index) throws InterruptedException {
+		new WebDriverWait(driver, 40)
+		        .until(ExpectedConditions.elementToBeClickable(By.id("RadioProfileNoVentas")));
 		List<WebElement> opt = driver.findElements(By.id("RadioProfileNoVentas"));
 		opt.get(index).findElement(By.xpath("./..")).click();
 		Thread.sleep(2000);

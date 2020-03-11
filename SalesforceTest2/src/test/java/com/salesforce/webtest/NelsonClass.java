@@ -19,16 +19,15 @@ public class NelsonClass {
  public  void planesPrimero(WebDriver driver) {
 		
 		try {
-			WebDriverWait wait = new WebDriverWait (driver, 40);
-			WebElement plan =driver.findElement(By.xpath("//*[@id=\'block_0\']"));
+			WebDriverWait wait = new WebDriverWait(driver, 40);
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("slds-spinner_container")));
+			WebElement plan = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\'block_0\']")));
 			//WebElement plan2 =driver.findElement(By.xpath("//*[@id=\'block_1\']"));
-			
-			
-			new WebDriverWait(driver, 40).until(ExpectedConditions.elementToBeClickable(plan));
-			plan.click();
 			Thread.sleep(tiempo);
-			WebElement siguientePlan = driver.findElement(By.xpath("//div[@id=\'PlanSelection_nextBtn\']/p"));
-			new WebDriverWait(driver, 40).until(ExpectedConditions.elementToBeClickable(siguientePlan));
+			
+			plan.findElement(By.xpath("./..")).click();
+			Thread.sleep(tiempo);
+			WebElement siguientePlan = new WebDriverWait(driver, 40).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id=\'PlanSelection_nextBtn\']/p")));
 			siguientePlan.click();
 			
 		} catch (InterruptedException e) {
@@ -58,9 +57,9 @@ public class NelsonClass {
  public  void portabilidadNo(WebDriver driver) {
 		
 		try {
+			new WebDriverWait(driver, 40).until(ExpectedConditions.elementToBeClickable(By.id("OptionPortability")));
 			
 			List<WebElement> web = driver.findElements(By.id("OptionPortability"));
-			new WebDriverWait(driver, 40).until(ExpectedConditions.elementToBeClickable(By.id("OptionPortability")));
 			web.get(1).findElement(By.xpath("./..")).click();
 			Thread.sleep(tiempo);
 			
