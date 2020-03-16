@@ -26,7 +26,7 @@ public class AutomationTest {
 		System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://test1dom--sit.my.salesforce.com/secur/frontdoor.jsp?sid=00Dc0000003lOc8!ARsAQBQKlDHzHktgfnWVLyDDg_mw_dnp2VyuXSzNRVc50qVYHRTdscj7lMiUcNkA2yuxrNIYBqOH04jHsRzNc2Plm17reF6L");
+		driver.get("https://test1dom--sittest.my.salesforce.com/secur/frontdoor.jsp?sid=00D3K0000008jQa!ARwAQMLE0Wb2.X5PNgeyvOwN9LM2RBY.SPh2LhoDSNjPZTzsIS7FzPelwIbzyY2Czk1QNg6xX6s7a6B6wx_n4cVCJJVYmUhm");
 		//driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 		//new WebDriverWait(driver, 40).until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.tagName("iframe")));
@@ -76,7 +76,8 @@ public class AutomationTest {
 		Thread.sleep(4000);
 		
 		
-		
+		// Solo funciona al seleccionar Compra de Equipo
+		// RoynerClass.seleccionDeDispositivo(driver);
 		
 		
 		//-----------------------Seccion: Validacion de Dispositivos
