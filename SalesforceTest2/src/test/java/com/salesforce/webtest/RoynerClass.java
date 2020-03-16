@@ -54,5 +54,14 @@ public class RoynerClass{
 		if(index == 1)
 			Thread.sleep(5000);
 	}
+	
+	public static void seleccionDeDispositivo(WebDriver driver) throws InterruptedException {
+		WebElement opt = new WebDriverWait(driver, 40)
+		        .until(ExpectedConditions.elementToBeClickable(By.id("block_01t3K000000HEDoQAO")));
+		opt.findElement(By.xpath("./..")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.id("StepChooseDevices_nextBtn")).click();
+		Thread.sleep(2000);
+	}
 
 }

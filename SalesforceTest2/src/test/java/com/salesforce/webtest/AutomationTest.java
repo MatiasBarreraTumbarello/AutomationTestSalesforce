@@ -76,7 +76,8 @@ public class AutomationTest {
 		Thread.sleep(4000);
 		
 		
-		
+		// Solo funciona al seleccionar Compra de Equipo
+		// RoynerClass.seleccionDeDispositivo(driver);
 		
 		
 		//-----------------------Seccion: Validacion de Dispositivos
