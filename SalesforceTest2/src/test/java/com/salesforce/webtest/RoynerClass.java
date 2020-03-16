@@ -10,17 +10,22 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class RoynerClass{
 	
-	public static void actualizarCliente(WebDriver driver, Integer index) throws InterruptedException {
-		List<WebElement> opt = driver.findElements(By.id("RadioUpdateDatosSeibel"));
+	public static void actualizarCliente(WebDriver driver) throws InterruptedException {
+		int index = 1;
+		List<WebElement> opt = driver.findElements(By.xpath("//*[@id=\'RadioUpdateDatosSeibel\']"));
 		Thread.sleep(4000);
-		opt.get(index).findElement(By.xpath("./..")).click();
+		opt.get(0).findElement(By.xpath("./..")).click();
+		Thread.sleep(2000);
+		//
+		WebDriverWait wait = new WebDriverWait(driver, 40);
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("slds-spinner_container")));
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("SearchClient_nextBtn")));
+		//
+		driver.findElement(By.xpath("//*[@id=\'SearchClient_nextBtn\']/p")).click();
 		Thread.sleep(2000);
 		
-		driver.findElement(By.id("SearchClient_nextBtn")).click();
-		Thread.sleep(2000);
-		
-		if(index == 1)
-			informacionDeCliente(driver);
+//		if(index == 1)
+//s			informacionDeCliente(driver);
 	}
 
 	public static void informacionDeCliente(WebDriver driver) throws InterruptedException {		
