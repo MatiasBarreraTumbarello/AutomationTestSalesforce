@@ -107,7 +107,7 @@ public class AutomationTest {
 		
 		//----------------------Seccion: Resumen de Compra
 		//mc.resumenDeCompraDomicilio(driver);
-		mc.botonEntregaEnSucursal(driver);
+		mc.resumenDeCompra(driver);
 		
 		
 		
