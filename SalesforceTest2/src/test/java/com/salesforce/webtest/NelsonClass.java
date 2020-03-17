@@ -41,7 +41,7 @@ public class NelsonClass {
 			plan.findElement(By.xpath("//*[@id=\'ChoosePlan\']/div/ng-include/a")).click();
 			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("slds-spinner_container")));
 			Thread.sleep(tiempo);
-			WebElement siguientePlan = new WebDriverWait(driver, 40).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id=\'PlanSelection_nextBtn\']/p")));//*[@id="PlanSelection_nextBtn"]/p
+			WebElement siguientePlan = new WebDriverWait(driver, 40).until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\'PlanSelection_nextBtn\']/p")));//*[@id="PlanSelection_nextBtn"]/p
 			siguientePlan.click();
 			
 		} catch (InterruptedException e) {
