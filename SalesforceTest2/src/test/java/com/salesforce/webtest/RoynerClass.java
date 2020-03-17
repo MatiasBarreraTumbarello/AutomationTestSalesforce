@@ -45,16 +45,14 @@ public class RoynerClass{
 		driver.findElement(By.id(res.getAttribute("id"))).click();
 	}
 	
-	public static void tipoDeEntrega(WebDriver driver, Integer index) throws InterruptedException {
+	public static void tipoDeEntrega(WebDriver driver) throws InterruptedException {
 		new WebDriverWait(driver, 40)
 		        .until(ExpectedConditions.elementToBeClickable(By.id("RadioProfileNoVentas")));
-		List<WebElement> opt = driver.findElements(By.id("RadioProfileNoVentas"));
-		opt.get(index).findElement(By.xpath("./..")).click();
+		//List<WebElement> opt = driver.findElements(By.id("RadioProfileNoVentas"));
+		driver.findElement(By.id("RadioProfileNoVentas")).findElement(By.xpath("./..")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.id("StepSaleProcessDevice_nextBtn")).click();
 		Thread.sleep(5000);
-		if(index == 1)
-			Thread.sleep(5000);
 	}
 	
 	public static void seleccionDeDispositivo(WebDriver driver) throws InterruptedException {

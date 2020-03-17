@@ -96,8 +96,7 @@ public class AutomationTest {
 		
 		
 		
-		// Cambiar indice a 1 para seleccionar opcion "sucursal"
-		RoynerClass.tipoDeEntrega(driver, 1);
+		RoynerClass.tipoDeEntrega(driver);
 		
 		
 		
