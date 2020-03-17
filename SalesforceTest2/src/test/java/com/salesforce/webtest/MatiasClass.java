@@ -13,6 +13,16 @@ public class MatiasClass {
 	public MatiasClass() {}
 	
 	
+	public void seleccionDispositivos(WebDriver driver) throws InterruptedException{
+		 WebDriverWait wait = new WebDriverWait(driver, 40);
+		 wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("slds-spinner_container")));
+		 WebElement seleccionar = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\'imgcentro\']/div[1]/div")));
+		 seleccionar.findElement(By.xpath("//*[@id=\'imgcentro\']/div[1]/div")).click();
+		 
+		 Thread.sleep(2000);
+		 driver.findElement(By.xpath("//*[@id=\'StepDevicesSelect_nextBtn\']/p")).click();
+	}
+	
 	public void validacionImei(WebDriver driver) {
 	{
 		try {
