@@ -29,6 +29,7 @@ public class AutomationTest {
 		driver.get("https://test1dom--sittest.my.salesforce.com/secur/frontdoor.jsp?sid=00D3K0000008jQa!ARwAQAmQh5iyb0AFk9iifBA4zZVZ8agtLaklUu_JQQ3Rgl33Pk69FNom8FUzY6rZvL.ysdj_VKXvM89Y4ofXRbbzMDIqZY3H");
 		//driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+	
 		//new WebDriverWait(driver, 40).until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.tagName("iframe")));
 
 		//driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
