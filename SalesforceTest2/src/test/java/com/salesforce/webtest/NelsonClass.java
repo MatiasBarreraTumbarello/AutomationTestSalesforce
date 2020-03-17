@@ -20,13 +20,13 @@ public class NelsonClass {
 		
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, 40);
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("slds-grid slds-wrap slds-grid--pull-padded ng-scope")));
-			WebElement plan = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='block_01tc0000007pvuiAAA']")));
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("slds-spinner_container")));
+			WebElement plan = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\'block_0\']")));
 			//WebElement plan2 =driver.findElement(By.xpath("//*[@id=\'block_1\']"));
 			Thread.sleep(tiempo);
 			
-			plan.findElement(By.xpath("//*[@id='block_01tc0000007pvuiAAA']")).click();
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("slds-grid slds-wrap slds-grid--pull-padded ng-scope")));
+			plan.findElement(By.xpath("./..")).click();
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("slds-spinner_container")));
 			Thread.sleep(tiempo);
 			WebElement siguientePlan = new WebDriverWait(driver, 40).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id=\'PlanSelection_nextBtn\']/p")));
 			siguientePlan.click();
