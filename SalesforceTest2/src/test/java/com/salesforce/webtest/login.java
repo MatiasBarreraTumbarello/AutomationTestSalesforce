@@ -35,7 +35,7 @@ public class login
 				Thread.sleep(2000);
 				
 				// Setea dígitos campo-->
-				driver.findElement(By.xpath("//input[@id='seibelUser']")).sendKeys("19991993");
+				driver.findElement(By.xpath("//input[@id='seibelUser']")).sendKeys("19964717");
 				Thread.sleep(2000);
 									
 				// Botón: Buscar Cliente-->
