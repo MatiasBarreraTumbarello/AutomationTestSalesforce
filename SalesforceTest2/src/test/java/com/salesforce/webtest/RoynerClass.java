@@ -56,12 +56,26 @@ public class RoynerClass{
 	}
 	
 	public static void seleccionDeDispositivo(WebDriver driver) throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, 40);
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("slds-spinner_container")));
 		WebElement opt = new WebDriverWait(driver, 40)
 		        .until(ExpectedConditions.elementToBeClickable(By.id("block_01t3K000000HEDoQAO")));
 		opt.findElement(By.xpath("./..")).click();
 		Thread.sleep(2000);
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("slds-spinner_container")));
 		driver.findElement(By.id("StepChooseDevices_nextBtn")).click();
 		Thread.sleep(2000);
+	}
+	
+	public static void dispositivos(WebDriver driver, Integer index) throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, 40);
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("slds-spinner_container")));
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("RadioDevices")));
+		List<WebElement> opt = driver.findElements(By.id("RadioDevices"));
+		opt.get(index).findElement(By.xpath("./..")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.id("StepDevicesSelect_nextBtn")).click();
+		Thread.sleep(5000);
 	}
 
 }
