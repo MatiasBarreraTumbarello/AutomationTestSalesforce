@@ -51,7 +51,7 @@ public class AutomationTest {
 		
 		driver.findElement(By.xpath("//input[@id='seibelUser']")).sendKeys("19964717");
 
-		//Botón: Buscar Cliente
+		//Botï¿½n: Buscar Cliente
 		
 		WebElement res = new WebDriverWait(driver, 40)
 		        .until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='IP_validClient']")));
@@ -67,7 +67,7 @@ public class AutomationTest {
 		
 
 		//------------------------------------PLANES-----------------------
-		/*Aca se puede comentar o descomentar según sea necesario probar*/
+		/*Aca se puede comentar o descomentar segï¿½n sea necesario probar*/
 		
 		NelsonClass.planesActualizado(driver);
 		Thread.sleep(4000);
@@ -78,6 +78,11 @@ public class AutomationTest {
 		
 		// Solo funciona al seleccionar Compra de Equipo
 		// RoynerClass.seleccionDeDispositivo(driver);
+		
+		
+		//----------- Check: No estoy interesado en estos equipos.
+		
+		//FranciscoClass.desinteresEquipo(driver);
 		
 		
 		//-----------------------Seccion: Validacion de Dispositivos
@@ -95,7 +100,7 @@ public class AutomationTest {
 		nc.portabilidadNo(driver);
 		
 		
-		
+		//--------------------------------
 		RoynerClass.tipoDeEntrega(driver);
 		
 		
@@ -111,10 +116,10 @@ public class AutomationTest {
 
 	}
 	
-	@After
+	/*@After
 	public void tearDown() {
 		driver.quit();
-	}
+	}*/
 	
 	
 	
