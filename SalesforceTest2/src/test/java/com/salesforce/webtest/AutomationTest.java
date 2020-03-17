@@ -40,15 +40,17 @@ public class AutomationTest {
 	
 	@Test
 	public void testScript() throws InterruptedException {
+		MatiasClass mc = new MatiasClass();
+		NelsonClass nc = new NelsonClass();
+		
+		
 		//----------------------------------cuenta Siebel 19991993 ---------------------
 		driver.switchTo().frame(0);
-		//new WebDriverWait(driver, 40).until(ExpectedConditions.elementToBeClickable(By.id("selectAccountOrTlfn")));
 		Select picklist = new Select(driver.findElement(By.id("selectAccountOrTlfn")));
 		picklist.selectByIndex(2);
 		
 		driver.findElement(By.xpath("//input[@id='seibelUser']")).sendKeys("19964717");
 
-		//Thread.sleep(4000);
 		//Botón: Buscar Cliente
 		
 		WebElement res = new WebDriverWait(driver, 40)
@@ -59,34 +61,29 @@ public class AutomationTest {
 		new WebDriverWait(driver, 40)
 		        .until(ExpectedConditions.elementToBeClickable(By.id("RadioUpdateDatosSeibel")));
 
-		//driver.findElement(By.xpath("//div[@id='IP_validClient']")).click();
-		//Thread.sleep(4000);
 
 		// Cambiar indice a 1 para seleccionar opcion "si"
 		RoynerClass.actualizarCliente(driver);
 		
-//		new WebDriverWait(driver, 40)
-//		        .until(ExpectedConditions.elementToBeClickable(By.id("block_0")));
 
 		//------------------------------------PLANES-----------------------
 		/*Aca se puede comentar o descomentar según sea necesario probar*/
-		NelsonClass nc = new NelsonClass();
 		
 		NelsonClass.planesActualizado(driver);
-		//nc.planesPrimero(driver);
-		//nc.planesSegundo(driver, plan2, 20, siguientePlan);
 		Thread.sleep(4000);
 		
+		//-----------------------Seccion: Dispositivos
 		
 		// Solo funciona al seleccionar Compra de Equipo
 		// RoynerClass.seleccionDeDispositivo(driver);
 		
+		mc.seleccionDispositivos(driver);
+		
 		
 		//-----------------------Seccion: Validacion de Dispositivos
-		
 		/* Para esta seccion es necesario comentar uno de los 2 codigos (IMEI o Dispositivos)*/
 		
-		MatiasClass mc = new MatiasClass();
+		
 		//mc.validacionImei(driver);
 		mc.validacionDispositivo(driver);
 		
@@ -95,7 +92,6 @@ public class AutomationTest {
 		//----------------------Portabilidad------------------------------
 		
 		
-		//WebElement portabilidadNo =driver.findElement(By.xpath("//*[@id=\'block_0\']"));
 		nc.portabilidadNo(driver);
 		
 		
