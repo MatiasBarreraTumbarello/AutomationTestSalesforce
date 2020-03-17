@@ -16,19 +16,32 @@ public class NelsonClass {
  public int tiempo= 4000;
  
  
+ public static void planesActualizado(WebDriver driver) throws InterruptedException{
+	 WebDriverWait wait = new WebDriverWait(driver, 40);
+	 wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("slds-spinner_container")));
+	 WebElement seleccionar = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\'block_01tc0000007pvuiAAA\']")));
+	 seleccionar.findElement(By.xpath("//*[@id=\'block_01tc0000007pvuiAAA\']")).click();
+	 
+	 wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("slds-spinner_container")));
+	 WebElement siguiente = wait.until(ExpectedConditions.elementToBeClickable(By.id("PlanSelection_nextBtn")));
+	 siguiente.click();
+	 
+	 Thread.sleep(10000);
+ }
+ 
  public  void planesPrimero(WebDriver driver) {
 		
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, 40);
 			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("slds-spinner_container")));
-			WebElement plan = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\'block_0\']")));
+			WebElement plan = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\'ChoosePlan\']/div/ng-include/a")));//*[@id="block_01tc0000007pvuiAAA"]
 			//WebElement plan2 =driver.findElement(By.xpath("//*[@id=\'block_1\']"));
 			Thread.sleep(tiempo);
 			
-			plan.findElement(By.xpath("./..")).click();
+			plan.findElement(By.xpath("//*[@id=\'ChoosePlan\']/div/ng-include/a")).click();
 			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("slds-spinner_container")));
 			Thread.sleep(tiempo);
-			WebElement siguientePlan = new WebDriverWait(driver, 40).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id=\'PlanSelection_nextBtn\']/p")));
+			WebElement siguientePlan = new WebDriverWait(driver, 40).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id=\'PlanSelection_nextBtn\']/p")));//*[@id="PlanSelection_nextBtn"]/p
 			siguientePlan.click();
 			
 		} catch (InterruptedException e) {

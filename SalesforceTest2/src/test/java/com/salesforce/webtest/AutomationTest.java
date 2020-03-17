@@ -26,7 +26,7 @@ public class AutomationTest {
 		System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://test1dom--sittest.my.salesforce.com/secur/frontdoor.jsp?sid=00D3K0000008jQa!ARwAQMLE0Wb2.X5PNgeyvOwN9LM2RBY.SPh2LhoDSNjPZTzsIS7FzPelwIbzyY2Czk1QNg6xX6s7a6B6wx_n4cVCJJVYmUhm");
+		driver.get("https://test1dom--sittest.my.salesforce.com/secur/frontdoor.jsp?sid=00D3K0000008jQa!ARwAQAmQh5iyb0AFk9iifBA4zZVZ8agtLaklUu_JQQ3Rgl33Pk69FNom8FUzY6rZvL.ysdj_VKXvM89Y4ofXRbbzMDIqZY3H");
 		//driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 		//new WebDriverWait(driver, 40).until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.tagName("iframe")));
@@ -45,7 +45,7 @@ public class AutomationTest {
 		Select picklist = new Select(driver.findElement(By.id("selectAccountOrTlfn")));
 		picklist.selectByIndex(2);
 		
-		driver.findElement(By.xpath("//input[@id='seibelUser']")).sendKeys("19976285");
+		driver.findElement(By.xpath("//input[@id='seibelUser']")).sendKeys("19964717");
 
 		//Thread.sleep(4000);
 		//Botón: Buscar Cliente
@@ -64,14 +64,15 @@ public class AutomationTest {
 		// Cambiar indice a 1 para seleccionar opcion "si"
 		RoynerClass.actualizarCliente(driver);
 		
-		new WebDriverWait(driver, 40)
-		        .until(ExpectedConditions.elementToBeClickable(By.id("block_0")));
+//		new WebDriverWait(driver, 40)
+//		        .until(ExpectedConditions.elementToBeClickable(By.id("block_0")));
 
 		//------------------------------------PLANES-----------------------
 		/*Aca se puede comentar o descomentar según sea necesario probar*/
 		NelsonClass nc = new NelsonClass();
 		
-		nc.planesPrimero(driver);
+		NelsonClass.planesActualizado(driver);
+		//nc.planesPrimero(driver);
 		//nc.planesSegundo(driver, plan2, 20, siguientePlan);
 		Thread.sleep(4000);
 		
