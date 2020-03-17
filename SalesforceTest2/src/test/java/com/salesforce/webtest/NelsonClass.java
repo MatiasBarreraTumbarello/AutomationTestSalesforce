@@ -50,26 +50,7 @@ public class NelsonClass {
 		}
 	}
  
- 
- 
- public  void planesSegundo(WebDriver driver) {
-		
-		try {
-			
-			WebDriverWait wait = new WebDriverWait(driver, 40);
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("slds-spinner_container")));
-			WebElement plan = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\'block_1\']")));
 
-			plan.findElement(By.xpath("./..")).click();
-			Thread.sleep(tiempo);
-			WebElement siguientePlan = new WebDriverWait(driver, 40).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id=\'PlanSelection_nextBtn\']/p")));
-			siguientePlan.click();
-			
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
  
  public  void portabilidadNo(WebDriver driver) {
 		
