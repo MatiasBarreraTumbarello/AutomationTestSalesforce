@@ -63,7 +63,7 @@ public class AutomationTest {
 
 
 		// Cambiar indice a 1 para seleccionar opcion "si"
-		RoynerClass.actualizarCliente(driver);
+		RoynerClass.actualizarCliente(driver, 0);
 		
 
 		//------------------------------------PLANES-----------------------
@@ -74,12 +74,10 @@ public class AutomationTest {
 		
 		//-----------------------Seccion: Dispositivos
 		
-		RoynerClass.dispositivos(driver, 1);
+		RoynerClass.dispositivos(driver, 0);
 		
 		// Solo funciona al seleccionar Compra de Equipo
-		RoynerClass.seleccionDeDispositivo(driver);
-		
-		mc.seleccionDispositivos(driver);
+		// RoynerClass.seleccionDeDispositivo(driver);
 		
 		
 		//-----------------------Seccion: Validacion de Dispositivos

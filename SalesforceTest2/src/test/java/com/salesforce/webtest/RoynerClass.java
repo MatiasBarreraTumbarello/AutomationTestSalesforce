@@ -10,11 +10,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class RoynerClass{
 	
-	public static void actualizarCliente(WebDriver driver) throws InterruptedException {
-		int index = 1;
+	public static void actualizarCliente(WebDriver driver, Integer index) throws InterruptedException {
 		List<WebElement> opt = driver.findElements(By.xpath("//*[@id=\'RadioUpdateDatosSeibel\']"));
 		Thread.sleep(4000);
-		opt.get(0).findElement(By.xpath("./..")).click();
+		opt.get(index).findElement(By.xpath("./..")).click();
 		Thread.sleep(2000);
 		//
 		WebDriverWait wait = new WebDriverWait(driver, 40);
@@ -24,11 +23,14 @@ public class RoynerClass{
 		driver.findElement(By.xpath("//*[@id=\'SearchClient_nextBtn\']/p")).click();
 		Thread.sleep(2000);
 		
-//		if(index == 1)
-//s			informacionDeCliente(driver);
+		if(index == 1)
+			informacionDeCliente(driver);
 	}
 
-	public static void informacionDeCliente(WebDriver driver) throws InterruptedException {		
+	public static void informacionDeCliente(WebDriver driver) throws InterruptedException {	
+		WebDriverWait wait = new WebDriverWait(driver, 40);
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("slds-spinner_container")));
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("TextNumberPhone")));
 		WebElement phone = driver.findElement(By.id("TextNumberPhone"));
 		phone.clear();
 		phone.sendKeys("5518497468");
@@ -63,6 +65,7 @@ public class RoynerClass{
 		opt.findElement(By.xpath("./..")).click();
 		Thread.sleep(2000);
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("slds-spinner_container")));
+		driver.findElement(By.id("vlcCart_Top")).findElement(By.xpath(".//div[1]")).click();
 		driver.findElement(By.id("StepChooseDevices_nextBtn")).click();
 		Thread.sleep(2000);
 	}
