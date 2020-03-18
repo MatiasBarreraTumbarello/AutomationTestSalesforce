@@ -63,7 +63,7 @@ public class AutomationTest {
 
 
 		// Cambiar indice a 1 para seleccionar opcion "si"
-		RoynerClass.actualizarCliente(driver, 0);
+		RoynerClass.actualizarCliente(driver, 1);
 		
 
 		//------------------------------------PLANES-----------------------
