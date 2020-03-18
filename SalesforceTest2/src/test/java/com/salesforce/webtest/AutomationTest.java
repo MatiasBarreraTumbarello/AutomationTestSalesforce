@@ -44,7 +44,7 @@ public class AutomationTest {
 		NelsonClass nc = new NelsonClass();
 		
 		
-		//----------------------------------cuenta Siebel 19991993 ---------------------
+		//--------------------------------- Cuenta Siebel  ---------------------
 		driver.switchTo().frame(0);
 		Select picklist = new Select(driver.findElement(By.id("selectAccountOrTlfn")));
 		picklist.selectByIndex(2);
@@ -63,7 +63,7 @@ public class AutomationTest {
 
 
 		// Cambiar indice a 1 para seleccionar opcion "si"
-		RoynerClass.actualizarCliente(driver, 0);
+		RoynerClass.actualizarCliente(driver, 1);
 		
 
 		//------------------------------------PLANES-----------------------
@@ -74,10 +74,10 @@ public class AutomationTest {
 		
 		//-----------------------Seccion: Dispositivos
 		
-		RoynerClass.dispositivos(driver, 0);
+		RoynerClass.dispositivos(driver, 1);
 		
 		// Solo funciona al seleccionar Compra de Equipo
-		// RoynerClass.seleccionDeDispositivo(driver);
+		RoynerClass.seleccionDeDispositivo(driver);
 		
 		
 		//----------- Check: No estoy interesado en estos equipos.

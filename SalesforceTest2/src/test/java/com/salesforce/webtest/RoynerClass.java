@@ -43,6 +43,8 @@ public class RoynerClass{
 		        .until(ExpectedConditions.elementToBeClickable(By.id("AditionalInfo_nextBtn")));
 		
 		driver.findElement(By.id(res.getAttribute("id"))).click();
+		
+		Thread.sleep(2000);
 	}
 	
 	public static void tipoDeEntrega(WebDriver driver) throws InterruptedException {
