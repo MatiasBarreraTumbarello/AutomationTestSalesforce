@@ -80,7 +80,10 @@ public class MatiasClass {
 			WebDriverWait wait = new WebDriverWait(driver, 40);
 			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("slds-spinner_container")));
 			WebElement btn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id=\'DeliveryHomeSummary_nextBtn\']/p")));
-			btn.click();
+			while(btn.isDisplayed() && btn.isEnabled()) {
+				Thread.sleep(1000);
+				btn.click();
+			}
 			Thread.sleep(tiempo);
 			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("slds-spinner_container")));
 			WebElement btnFinish = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class=\'slds-button slds-button_brand ng-binding\']")));

@@ -71,6 +71,7 @@ public class AutomationTest {
 		
 		NelsonClass.planesActualizado(driver);
 		Thread.sleep(4000);
+		// driver.quit();
 		
 		//-----------------------Seccion: Dispositivos
 		

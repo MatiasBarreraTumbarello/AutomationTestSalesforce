@@ -42,6 +42,7 @@ public class RoynerClass{
 		WebElement res = new WebDriverWait(driver, 40)
 		        .until(ExpectedConditions.elementToBeClickable(By.id("AditionalInfo_nextBtn")));
 		
+		Thread.sleep(2000);
 		driver.findElement(By.id(res.getAttribute("id"))).click();
 		
 		Thread.sleep(2000);

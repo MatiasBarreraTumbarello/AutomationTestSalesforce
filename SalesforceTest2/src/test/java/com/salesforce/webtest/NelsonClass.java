@@ -21,11 +21,15 @@ public class NelsonClass {
 	 WebDriverWait wait = new WebDriverWait(driver, 40);
 	 wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("slds-spinner_container")));
 	 WebElement seleccionar = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\'block_01tc0000007pvuiAAA\']")));
-	 seleccionar.findElement(By.xpath("//*[@id=\'block_01tc0000007pvuiAAA\']")).click();
-	 
+	 Thread.sleep(1000);
+	 seleccionar.click();
 	 wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("slds-spinner_container")));
 	 WebElement siguiente = wait.until(ExpectedConditions.elementToBeClickable(By.id("PlanSelection_nextBtn")));
-	 siguiente.click();
+	 while(siguiente.isEnabled() && siguiente.isDisplayed()) {
+		 Thread.sleep(1000);
+		 siguiente.click();
+	 }
+	 
 	 
 	 Thread.sleep(10000);
  }
