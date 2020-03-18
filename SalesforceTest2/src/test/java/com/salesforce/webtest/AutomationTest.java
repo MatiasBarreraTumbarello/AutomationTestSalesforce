@@ -44,14 +44,14 @@ public class AutomationTest {
 		NelsonClass nc = new NelsonClass();
 		
 		
-		//----------------------------------cuenta Siebel 19991993 ---------------------
+		//--------------------------------- Cuenta Siebel  ---------------------
 		driver.switchTo().frame(0);
 		Select picklist = new Select(driver.findElement(By.id("selectAccountOrTlfn")));
 		picklist.selectByIndex(2);
 		
 		driver.findElement(By.xpath("//input[@id='seibelUser']")).sendKeys("19964717");
 
-		//Bot�n: Buscar Cliente
+		//Boton: Buscar Cliente
 		
 		WebElement res = new WebDriverWait(driver, 40)
 		        .until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='IP_validClient']")));
@@ -75,10 +75,10 @@ public class AutomationTest {
 		
 		//-----------------------Seccion: Dispositivos
 		
-		RoynerClass.dispositivos(driver, 0);
+		RoynerClass.dispositivos(driver, 1);
 		
 		// Solo funciona al seleccionar Compra de Equipo
-		// RoynerClass.seleccionDeDispositivo(driver);
+		RoynerClass.seleccionDeDispositivo(driver);
 		
 		
 		//----------- Check: No estoy interesado en estos equipos.
