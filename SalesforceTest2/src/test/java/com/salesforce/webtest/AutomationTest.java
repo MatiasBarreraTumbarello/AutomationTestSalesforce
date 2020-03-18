@@ -86,7 +86,7 @@ public class AutomationTest {
 		
 		
 		//-----------------------Seccion: Validacion de Dispositivos
-		/* Para esta seccion es necesario comentar uno de los 2 codigos (IMEI o Dispositivos)*/
+		/* Para esta seccion es necesario comentar uno de las 2 lineas de codigos siguientes (IMEI o Dispositivos)*/
 		
 		
 		//mc.validacionImei(driver);
@@ -107,7 +107,7 @@ public class AutomationTest {
 		
 		//----------------------Seccion: Resumen de Compra
 		//mc.resumenDeCompraDomicilio(driver);
-		mc.botonEntregaEnSucursal(driver);
+		mc.resumenDeCompra(driver);
 		
 		
 		

@@ -75,39 +75,19 @@ public class MatiasClass {
 		}
 	}
 	
-	public void botonEntregaEnSucursal(WebDriver driver) {
+	public void resumenDeCompra(WebDriver driver) {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, 40);
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("slds-spinner_container")));
-			WebElement stockNext = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id=\'StockBranches_nextBtn\']/p")));
-			stockNext.click();  //Seccion "Entrega en Sucursal"
-			Thread.sleep(tiempo); //20 segundos para chequear info
 			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("slds-spinner_container")));
 			WebElement btn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id=\'DeliveryHomeSummary_nextBtn\']/p")));
 			btn.click();
 			Thread.sleep(tiempo);
-			WebElement btnFinish = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id=\'FinishMsg_nextBtn\']/p")));
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("slds-spinner_container")));
+			WebElement btnFinish = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class=\'slds-button slds-button_brand ng-binding\']")));
 			btnFinish.click();
 			Thread.sleep(tiempo);
 			//Nos muestra el numero de pedido 
 		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	
-	
-	public void resumenDeCompraDomicilio(WebDriver driver) {
-		try {
-			WebDriverWait wait = new WebDriverWait(driver, 40);
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("slds-spinner_container")));
-			WebElement btn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id=\'DeliveryHomeSummary_nextBtn\']/p")));
-			btn.click();
-			Thread.sleep(tiempo);
-			WebElement btnFinish = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id=\'FinishMsg_nextBtn\']/p")));
-			btnFinish.click();
-			Thread.sleep(tiempo);
-		}catch(InterruptedException e) {
 			e.printStackTrace();
 		}
 	}
