@@ -26,7 +26,7 @@ public class AutomationTest {
 		System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://test1dom--sittest.my.salesforce.com/secur/frontdoor.jsp?sid=00D3K0000008jQa!ARwAQAmQh5iyb0AFk9iifBA4zZVZ8agtLaklUu_JQQ3Rgl33Pk69FNom8FUzY6rZvL.ysdj_VKXvM89Y4ofXRbbzMDIqZY3H");
+		driver.get("https://test1dom--sittest.my.salesforce.com/secur/frontdoor.jsp?sid=00D3K0000008jQa!ARwAQBY0ZxwXgqMa5QFLaka5ocWZbOYsqmx68XF7oX.nqRiZD5.U2LujEdISpoLauCidE_j42k5nBtU9U24KlpxkWFacpdW0");
 		//driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 	

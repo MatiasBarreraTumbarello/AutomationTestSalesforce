@@ -17,6 +17,7 @@ public class NelsonClass {
  
  
  public static void planesActualizado(WebDriver driver) throws InterruptedException{
+	 Thread.sleep(2000);
 	 WebDriverWait wait = new WebDriverWait(driver, 40);
 	 wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("slds-spinner_container")));
 	 WebElement seleccionar = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\'block_01tc0000007pvuiAAA\']")));
