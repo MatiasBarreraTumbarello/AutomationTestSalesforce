@@ -51,7 +51,7 @@ public class AutomationTest {
 		
 		driver.findElement(By.xpath("//input[@id='seibelUser']")).sendKeys("19964717");
 
-		//Bot�n: Buscar Cliente
+		//Boton: Buscar Cliente
 		
 		WebElement res = new WebDriverWait(driver, 40)
 		        .until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='IP_validClient']")));
