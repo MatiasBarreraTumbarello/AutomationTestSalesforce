@@ -11,9 +11,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class NelsonClass {
- public NelsonClass() {}
  //Esta variable se debe cambiar segun el retraso del servidor.
  public int tiempo= 4000;
+ 
+ public NelsonClass() {}
  
  
  public static void planesActualizado(WebDriver driver) throws InterruptedException{
@@ -61,12 +62,17 @@ public class NelsonClass {
 		
 		try {
 			new WebDriverWait(driver, 40).until(ExpectedConditions.elementToBeClickable(By.id("OptionPortability")));
+			Thread.sleep(1000);
 			
 			List<WebElement> web = driver.findElements(By.id("OptionPortability"));
 			web.get(1).findElement(By.xpath("./..")).click();
 			Thread.sleep(tiempo);
 			
-			driver.findElement(By.xpath("//*[@id=\'StepDeviceValidation_nextBtn\']/p")).click();
+			WebElement btn = driver.findElement(By.xpath("//*[@id=\'StepDeviceValidation_nextBtn\']/p"));
+			while(btn.isEnabled() && btn.isDisplayed()) {
+				Thread.sleep(1000);
+				btn.click();
+			}
 			Thread.sleep(tiempo);
 			
 		} catch (InterruptedException e) {

@@ -90,7 +90,7 @@ public class AutomationTest {
 		
 		
 		//mc.validacionImei(driver);
-		MatiasClass.validacionDispositivo(driver);
+		//MatiasClass.validacionDispositivo(driver);
 		
 		
 		

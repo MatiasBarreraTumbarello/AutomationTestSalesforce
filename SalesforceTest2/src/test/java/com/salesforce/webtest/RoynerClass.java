@@ -67,7 +67,11 @@ public class RoynerClass{
 		Thread.sleep(2000);
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("slds-spinner_container")));
 		driver.findElement(By.id("vlcCart_Top")).findElement(By.xpath(".//div[1]")).click();
-		driver.findElement(By.id("StepChooseDevices_nextBtn")).click();
+		WebElement btn = driver.findElement(By.id("StepChooseDevices_nextBtn"));
+		while(btn.isEnabled() && btn.isDisplayed()) {
+			Thread.sleep(1000);
+			btn.click();
+		}
 		Thread.sleep(2000);
 	}
 	

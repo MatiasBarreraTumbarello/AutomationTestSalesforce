@@ -16,9 +16,9 @@ public class MatiasClass {
 	{
 		try {
 			int tiempo= 5000;
-			List<WebElement> mdv = driver.findElements(By.id("RadioSelectMethod"));
-			WebElement opcion1 = new WebDriverWait(driver, 40)
+			new WebDriverWait(driver, 40)
 			        .until(ExpectedConditions.elementToBeClickable(By.id("RadioSelectMethod")));
+			List<WebElement> mdv = driver.findElements(By.id("RadioSelectMethod"));
 			Thread.sleep(tiempo);
 			mdv.get(0).findElement(By.xpath("./..")).click();
 			Thread.sleep(tiempo);
