@@ -40,7 +40,6 @@ public class AutomationTest {
 	
 	@Test
 	public void testScript() throws InterruptedException {
-		MatiasClass mc = new MatiasClass();
 		NelsonClass nc = new NelsonClass();
 		
 		
@@ -91,7 +90,7 @@ public class AutomationTest {
 		
 		
 		//mc.validacionImei(driver);
-		mc.validacionDispositivo(driver);
+		MatiasClass.validacionDispositivo(driver);
 		
 		
 		
@@ -108,7 +107,7 @@ public class AutomationTest {
 		
 		//----------------------Seccion: Resumen de Compra
 		//mc.resumenDeCompraDomicilio(driver);
-		mc.resumenDeCompra(driver);
+		MatiasClass.resumenDeCompra(driver);
 		
 		
 		

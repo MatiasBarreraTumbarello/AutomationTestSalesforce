@@ -9,14 +9,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MatiasClass {
-	public int tiempo= 5000;
 	public MatiasClass() {}
 	
 	
-	public void validacionImei(WebDriver driver) {
+	public static void validacionImei(WebDriver driver) {
 	{
 		try {
-			
+			int tiempo= 5000;
 			List<WebElement> mdv = driver.findElements(By.id("RadioSelectMethod"));
 			WebElement opcion1 = new WebDriverWait(driver, 40)
 			        .until(ExpectedConditions.elementToBeClickable(By.id("RadioSelectMethod")));
@@ -38,8 +37,9 @@ public class MatiasClass {
 	}
 	
 	
-	public void validacionDispositivo(WebDriver driver) {
+	public static void validacionDispositivo(WebDriver driver) {
 		try {
+			int tiempo= 5000;
 			WebDriverWait wait = new WebDriverWait(driver, 40);
 			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("slds-spinner_container")));
 			wait.until(ExpectedConditions.elementToBeClickable(By.id("RadioSelectMethod")));
@@ -65,8 +65,9 @@ public class MatiasClass {
 		}
 	}
 	
-	public void resumenDeCompra(WebDriver driver) {
+	public static void resumenDeCompra(WebDriver driver) {
 		try {
+			int tiempo= 5000;
 			WebDriverWait wait = new WebDriverWait(driver, 40);
 			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("slds-spinner_container")));
 			WebElement btn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id=\'DeliveryHomeSummary_nextBtn\']/p")));
