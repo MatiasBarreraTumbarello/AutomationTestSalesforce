@@ -26,7 +26,7 @@ public class AutomationTest {
 		System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://test1dom--sittest.my.salesforce.com/secur/frontdoor.jsp?sid=00D3K0000008jQa!ARwAQBY0ZxwXgqMa5QFLaka5ocWZbOYsqmx68XF7oX.nqRiZD5.U2LujEdISpoLauCidE_j42k5nBtU9U24KlpxkWFacpdW0");
+		driver.get("https://test1dom--sittest.my.salesforce.com/secur/frontdoor.jsp?sid=00D3K0000008jQa!ARwAQKDfWhyXEp3pcOXNmX7nXrtovNuyNmfS17th.3bUuaoK.6D0aYNcUXyUawxx7Rq6cO554gnOrO8tQ.H.lRKlL9KA0JoA");
 		//driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 	
@@ -61,8 +61,9 @@ public class AutomationTest {
 		        .until(ExpectedConditions.elementToBeClickable(By.id("RadioUpdateDatosSeibel")));
 
 
-		// Cambiar indice a 1 para seleccionar opcion "si"
+		// Para la seleccion de actualizacion utilizar indices: 1 = "si", 0 = "no"
 		RoynerClass.actualizarCliente(driver, 1);
+		//driver.quit();
 		
 
 		//------------------------------------PLANES-----------------------
@@ -70,7 +71,6 @@ public class AutomationTest {
 		
 		NelsonClass.planesActualizado(driver);
 		Thread.sleep(4000);
-		// driver.quit();
 		
 		//-----------------------Seccion: Dispositivos
 		
