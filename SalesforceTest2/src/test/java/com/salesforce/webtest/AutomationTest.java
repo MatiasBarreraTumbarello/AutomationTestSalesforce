@@ -72,7 +72,7 @@ public class AutomationTest {
 
 		//------------------------------------PLANES-----------------------
 		/*Aca se puede comentar o descomentar seg�n sea necesario probar*/
-		
+		//Nelson
 		NelsonClass.planesActualizado(driver);
 		Thread.sleep(4000);
 		
@@ -103,7 +103,7 @@ public class AutomationTest {
 		
 		//----------------------Portabilidad------------------------------
 		
-		
+		//Nelson
 		nc.portabilidadNo(driver);
 		
 		
