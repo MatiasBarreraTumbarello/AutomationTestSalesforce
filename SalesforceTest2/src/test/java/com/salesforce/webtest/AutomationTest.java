@@ -61,8 +61,13 @@ public class AutomationTest {
 		        .until(ExpectedConditions.elementToBeClickable(By.id("RadioUpdateDatosSeibel")));
 
 
+
 		// Cambiar indice a 1 para seleccionar opcion "si"
 		RoynerClass.actualizarCliente(driver, 0);
+
+		// Para la seleccion de actualizacion utilizar indices: 1 = "si", 0 = "no"
+		RoynerClass.actualizarCliente(driver, 1);
+		//driver.quit();
 		
 
 		//------------------------------------PLANES-----------------------
@@ -70,7 +75,6 @@ public class AutomationTest {
 		
 		NelsonClass.planesActualizado(driver);
 		Thread.sleep(4000);
-		// driver.quit();
 		
 		//-----------------------Seccion: Dispositivos
 		
