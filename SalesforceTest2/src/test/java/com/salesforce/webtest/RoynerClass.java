@@ -11,8 +11,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class RoynerClass{
 	
 	public static void actualizarCliente(WebDriver driver, Integer index) throws InterruptedException {
+		new WebDriverWait(driver, 40)
+        	.until(ExpectedConditions.elementToBeClickable(By.id("RadioUpdateDatosSeibel")));
 		List<WebElement> opt = driver.findElements(By.xpath("//*[@id=\'RadioUpdateDatosSeibel\']"));
-		Thread.sleep(4000);
+		Thread.sleep(2000);
 		opt.get(index).findElement(By.xpath("./..")).click();
 		Thread.sleep(2000);
 		//
@@ -33,12 +35,14 @@ public class RoynerClass{
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("TextNumberPhone")));
 		WebElement phone = driver.findElement(By.id("TextNumberPhone"));
 		phone.clear();
-		phone.sendKeys("5518497468");
+		phone.sendKeys("5569310423");
 		Thread.sleep(2000);
 		
 		WebElement email = driver.findElement(By.id("TextEmail"));
 		email.clear();
-		email.sendKeys("scardozo@labsxd.co");
+		email.sendKeys("scardozo@labsxd.com");
+		Thread.sleep(1000);
+		driver.findElement(By.id("CheckboxPrincipal")).findElement(By.xpath("./..")).click();
 		WebElement res = new WebDriverWait(driver, 40)
 		        .until(ExpectedConditions.elementToBeClickable(By.id("AditionalInfo_nextBtn")));
 		
