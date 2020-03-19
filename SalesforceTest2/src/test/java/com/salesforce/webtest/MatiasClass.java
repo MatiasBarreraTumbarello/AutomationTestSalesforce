@@ -11,7 +11,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class MatiasClass {
 	public MatiasClass() {}
 	
-	
+	//Este metodo se utiliza una vez elegido la opcion "Trae tu equipo a IZZI" en la seccion: Dispositivo
+	//Solo puede elegir entre la validacion por IMEI o validacion por disposiivo
 	public static void validacionImei(WebDriver driver) {
 	{
 		try {
@@ -36,7 +37,8 @@ public class MatiasClass {
 		
 	}
 	
-	
+	//Este metodo se utiliza una vez elegido la opcion "Trae tu equipo a IZZI" en la seccion: Dispositivo
+	//Solo puede elegir entre la validacion por IMEI o validacion por disposiivo
 	public static void validacionDispositivo(WebDriver driver) {
 		try {
 			int tiempo= 5000;
@@ -65,6 +67,8 @@ public class MatiasClass {
 		}
 	}
 	
+	
+	//Este metodo es el paso final de la gestion de compra, donde se muestra el resumente y pasa a la siguiente pestaña de finalizar compra
 	public static void resumenDeCompra(WebDriver driver) {
 		try {
 			int tiempo= 5000;

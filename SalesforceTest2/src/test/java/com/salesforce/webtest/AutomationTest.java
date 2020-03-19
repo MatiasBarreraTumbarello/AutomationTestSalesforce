@@ -90,10 +90,13 @@ public class AutomationTest {
 		
 		
 		//-----------------------Seccion: Validacion de Dispositivos
+		
+		/* Para usar los metodos de MatiasClass es necesario cambiar el valor de 1 a 0 del llamamiento RoynerClass.dispositivos()
+		 * Y despues comentar los llamamientos de FranciscoClass.desinteresEquipo() */
+		 
 		/* Para esta seccion es necesario comentar uno de las 2 lineas de codigos siguientes (IMEI o Dispositivos)*/
 		
-		
-		//mc.validacionImei(driver);
+		//MatiasClass.validacionImei(driver);
 		//MatiasClass.validacionDispositivo(driver);
 		
 		
@@ -110,7 +113,6 @@ public class AutomationTest {
 		
 		
 		//----------------------Seccion: Resumen de Compra
-		//mc.resumenDeCompraDomicilio(driver);
 		MatiasClass.resumenDeCompra(driver);
 		
 		
